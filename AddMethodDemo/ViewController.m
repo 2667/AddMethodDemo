@@ -19,12 +19,15 @@
     [super viewDidLoad];
     //添加方法
     Person *p = [[Person alloc]init];
+    //    findInSelf是添加的方法名,addFind是用来实现findInSelf这个方法的方法名,findInSelf要执行什么代码就写到addFind方法中;
     class_addMethod([Person class], @selector(findInSelf), class_getMethodImplementation([ViewController class], @selector(addFind)), "v@:");
+    //执行添加到findInSelf方法
     [p performSelector:@selector(findInSelf)];
     
-    [self exchangeMethod];
-    [self printPerson];
+//    [self exchangeMethod];
+//    [self printPerson];
 }
+
 - (void)viewWillAppear:(BOOL)animated{
 
     [super viewWillAppear: animated];
