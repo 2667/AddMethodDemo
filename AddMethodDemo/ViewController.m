@@ -17,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"这是新分支才有的");
     //添加方法
     Person *p = [[Person alloc]init];
     class_addMethod([Person class], @selector(findInSelf), class_getMethodImplementation([ViewController class], @selector(addFind)), "v@:");
